@@ -1,0 +1,121 @@
+/* Estilo para el contenedor de equipos */
+.teams-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo para el título principal */
+.teams-container h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Estilo de la cuadrícula de equipos */
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Estilo de cada tarjeta de equipo */
+.team-card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Efecto hover en la tarjeta */
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo del nombre del equipo */
+.team-card h2 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+/* Estilo de la insignia del equipo */
+.team-badge {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Información adicional del equipo */
+.team-card p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Formato de las etiquetas "strong" */
+.team-card p strong {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Estilo para la descripción del equipo */
+.team-description {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+    min-height: 80px;
+    /* Ajusta la altura mínima según tus necesidades */
+    max-height: 80px;
+    /* Limita la altura a 80px */
+    overflow: hidden;
+    /* Oculta el texto que sobrepasa la altura */
+    position: relative;
+}
+
+/* Gradiente para indicar que hay más contenido */
+.team-description::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+    pointer-events: none;
+}
+
+/* Botón para expandir la descripción */
+.show-more-button {
+    display: inline-block;
+    margin-top: 10px;
+    cursor: pointer;
+    color: #007bff;
+    font-weight: bold;
+}
+
+
+
+
+/* Ajustes de responsividad */
+@media (max-width: 768px) {
+    .teams-container {
+        padding: 10px;
+    }
+
+    .teams-grid {
+        gap: 15px;
+    }
+
+    .team-card {
+        padding: 15px;
+    }
+}

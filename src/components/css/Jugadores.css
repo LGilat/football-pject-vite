@@ -1,0 +1,79 @@
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
+  background-color: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 1200px;
+  font-family: Arial, sans-serif;
+}
+
+.jugador-card {
+  width: 350px;
+/* Ajusta el ancho para que tenga mejor proporción */
+  min-height: 600px;
+  background: #ffffff;
+  /* Fondo suave para destacar la tarjeta */
+  border-radius: 15px;
+  /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Sombra para dar profundidad */
+  margin: 20px auto;
+  /* Centrará la tarjeta horizontalmente */
+  padding: 20px;
+  text-align: center;
+  /* Centrar todo el contenido */
+  font-family: Arial, sans-serif;
+  /* Fuente estándar */
+}
+
+.jugador-img-cutout {
+  width: 150px;
+  /* Tamaño de la imagen */
+  height: 150px;
+  /* Altura igual para hacerlo un círculo */
+  object-fit: cover;
+  /* Asegura que la imagen se mantenga bien recortada */
+  border-radius: 50%;
+  /* Hace que la imagen sea un círculo */
+  border: 3px solid #d32f2f;
+  /* Borde alrededor de la imagen, color rojo oscuro */
+  margin-bottom: 15px;
+  /* Espacio inferior para separar de los textos */
+}
+
+.jugador-card h2 {
+  color: #333;
+  /* Color oscuro para destacar el nombre */
+  margin-bottom: 10px;
+}
+
+.jugador-card p {
+  font-size: 0.9em;
+  /* Tamaño de texto adecuado */
+  color: #555;
+  /* Color gris para facilitar la lectura */
+  margin: 8px 0;
+  /* Espacio entre párrafos */
+}
+
+.jugador-card p strong {
+  color: #000;
+  /* Color de los títulos en negrita */
+}
+
+.jugador-descripcion {
+  max-height: 150px;
+  /* Limita la altura máxima */
+  overflow-y: auto;
+  /* Añade scroll vertical */
+  padding: 6px;
+  line-height: 1.5;
+  background-color: #f9f9f9;
+  /* Fondo claro para destacar el texto */
+  border-radius: 5px;
+}
