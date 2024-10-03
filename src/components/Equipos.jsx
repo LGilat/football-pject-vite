@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Equipo from './views/Equipo'
 import './css/Equipos.css'
 
@@ -45,9 +45,9 @@ export default function Equipos() {
             <h1>Equipos de {countryname}</h1>
             <div className="teams-grid">
                 {equipos?.map(equipo => (
-                    <Link to={`/teamdetails/${equipo.strTeam}`} key={equipo.strTeam}>
-                        <Equipo key={equipo.idTeam} team={equipo} />
-                    </Link>
+                   
+                        <Equipo key={equipo.idTeam} team={equipo} href={`/teamdetails/${equipo.strTeam}`} />
+                    
                 ))}
             </div>
         </div>

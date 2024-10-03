@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import useCountries from './customhooks/useCountries'
 import Country from './views/Country'
 import './css/Countries.css'
@@ -32,11 +31,8 @@ export default function Countries(){
         <>
             <h1>Countries</h1>
             <div className='countries-grid'> 
-            {countries?.map(country => (
-                 <Link to={`/equipos/${country.name_en}`} key={country.name_en}>
-                     <Country country={country} key={country.name_en} />
-                 </Link>
-                
+            {countries?.map(country => ( 
+                     <Country country={country} key={country.name_en} href={`/equipos/${country.name_en}`}/>
             ))}
 
             </div>

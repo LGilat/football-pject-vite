@@ -21,6 +21,8 @@
     margin-top: 20px;
 }
 
+
+
 /* Estilo de cada tarjeta de equipo */
 .team-card {
     background: #ffffff;
@@ -36,6 +38,7 @@
 .team-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
 }
 
 /* Estilo del nombre del equipo */
@@ -43,6 +46,10 @@
     color: #333;
     font-size: 1.8rem;
     margin-bottom: 10px;
+}
+
+.team-card a:hover{
+    text-decoration: none;
 }
 
 /* Estilo de la insignia del equipo */

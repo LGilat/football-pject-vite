@@ -44,10 +44,7 @@ export default function CountriesLeague(){
             /> 
             <div className='countries-grid'> 
             {filteredCountries?.map(country => (
-                 <Link to={`/allcountryleague/${country.name_en}`} key={country.name_en}>
-                     <Country country={country} key={country.name_en} />
-                 </Link>
-                
+                <Country country={country} key={country.name_en} href={`/allcountryleague/${country.name_en}`} />
             ))}
 
             </div>

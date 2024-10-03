@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Equipo from './views/Equipo'
 
 
 
+/**
+ * Component to render a list of teams in a given league
+ * 
+ * The component receives the league name as a parameter and fetches the list of teams from the API.
+ * It renders a list of teams with their logos, names and alternate names.
+ * 
+ * @param {string} league - The name of the league
+ */
 export default function TeamsLeague() {
     const { league } = useParams();
     const [teams, setTeams] = useState([])
@@ -30,17 +38,23 @@ export default function TeamsLeague() {
     }
 
     if (error) {
-        return <div>Error: {error.message}</div>
+        return (
+            <div>
+              <h2>Error</h2>
+              <p>{error.message}</p>
+              <p>Status: {error.status}</p>
+            </div>
+          );
     }
 
     return (
         <div>
-            <h1>Teams in {league}</h1>
+            <h1 aria-label={`Equipos en la liga ${league}`} >Teams in {league}</h1>
             <div className="teams-grid">
                 {teams?.map(team => (
-                    <Link to={`/teamdetails/${team.strTeam}`} key={team.strTeam}>
-                        <Equipo key={team.idTeam} team={team} />
-                    </Link>
+                    
+                        <Equipo key={team.idTeam} team={team} href={`/teamdetails/${team.strTeam}`}/>
+                   
                 ))}
             </div>
         </div>

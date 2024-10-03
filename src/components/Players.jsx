@@ -86,7 +86,7 @@ export default function Jugadores( ){
 
             <div className="players-grid">
                 {selectPlayers?.map(jugador => (
-                    <Link to={`/players/${jugador.strPlayer}` } key={jugador.idPlayer } >
+                    <Link to={`/players/${jugador.idPlayer}` } key={jugador.idPlayer } >
                         <Jugador key={jugador.idPlayer} jugador={jugador} />
                     </Link>
                 ))}

@@ -12,6 +12,10 @@
   font-family: Arial, sans-serif;
 }
 
+.players-grid a:hover{
+  text-decoration: none !important;
+}
+
 .jugador-card {
   width: 350px;
 /* Ajusta el ancho para que tenga mejor proporción */
@@ -44,7 +48,15 @@
   /* Borde alrededor de la imagen, color rojo oscuro */
   margin-bottom: 15px;
   /* Espacio inferior para separar de los textos */
+  transition: transform 0.3s ease; /* Transición suave */
 }
+
+.jugador-img-cutout:hover {
+  transform: scale(1.1);
+  /* Hace que la imagen se agrande */
+}
+
+
 
 .jugador-card h2 {
   color: #333;
@@ -64,6 +76,10 @@
 .jugador-card p strong {
   color: #000;
   /* Color de los títulos en negrita */
+}
+
+.jugador-card:hover{
+  text-decoration: none;
 }
 
 .jugador-descripcion {
