@@ -6,7 +6,7 @@ import '../css/Jugadores.css'
 
 export default function Jugador({ jugador }) {
     return (
-        <div>
+       
             <div  className="jugador-card">
                 <h2>{jugador.strPlayer}</h2>
                 {jugador.strCutout && <img src={jugador.strCutout} alt={`${jugador.strPlayer} Cutout`} className="jugador-img-cutout" />}
@@ -20,6 +20,6 @@ export default function Jugador({ jugador }) {
                 <p><strong>Team Badge:</strong> {jugador.strBadge || 'No team badge available'}</p>
                 <p className='jugador-descripcion'><strong>Description:</strong> {jugador.strDescriptionEN || jugador.strDescriptionES || 'No description available'}</p>
             </div>
-        </div>
+        
     );
 }

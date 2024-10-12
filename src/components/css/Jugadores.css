@@ -1,24 +1,73 @@
+.label-grid-players {
+  position: relative;
+  top: -60px;
+  /* ajusta el valor según sea necesario */
+  z-index: 1;
+  /* asegúrate de que el */
+  background-color: #ffffff;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+  box-sizing: content-box;
+  width: 80%;
+}
+
+.label-grid-players h1 {
+  font-size: 3.0rem;
+  text-align: left;
+  margin: 0;
+  padding-left: 1.3em;
+  padding-bottom: 2.2rem;
+  padding-top: 1.2rem;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 400px;
+  margin: 3.0rem;
+}
+
+.search-form button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 50px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background-color: #3e8e41;
+}
+
 .players-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 20px;
   justify-items: center;
   padding: 20px;
-  background-color: #fafafa;
+  background-color: #f0f0f0;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
-  max-width: 1200px;
+  max-width: 1400px;
   font-family: Arial, sans-serif;
 }
 
-.players-grid a:hover{
+.players-grid a:hover {
   text-decoration: none !important;
 }
 
 .jugador-card {
+
   width: 350px;
-/* Ajusta el ancho para que tenga mejor proporción */
+  /* Ajusta el ancho para que tenga mejor proporción */
   min-height: 600px;
   background: #ffffff;
   /* Fondo suave para destacar la tarjeta */
@@ -48,15 +97,14 @@
   /* Borde alrededor de la imagen, color rojo oscuro */
   margin-bottom: 15px;
   /* Espacio inferior para separar de los textos */
-  transition: transform 0.3s ease; /* Transición suave */
+  transition: transform 0.3s ease;
+  /* Transición suave */
 }
 
 .jugador-img-cutout:hover {
   transform: scale(1.1);
   /* Hace que la imagen se agrande */
 }
-
-
 
 .jugador-card h2 {
   color: #333;
@@ -78,7 +126,7 @@
   /* Color de los títulos en negrita */
 }
 
-.jugador-card:hover{
+.jugador-card:hover {
   text-decoration: none;
 }
 

@@ -47,11 +47,11 @@ export default function AllCountryLeague(){
 
     return (
         <div>
-            <h1>AllCountryLeague</h1>
+            <h1>Leagues</h1>
             <div className="league-container">
                 {leagues?.map(league => (
                     <League key={league.idLeague} league={league} />
-                ))}
+                )) || 'No leagues available'}
             </div>
         </div>
     )

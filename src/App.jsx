@@ -17,6 +17,7 @@ import PlayerDetails from './components/PlayerDetails';
 import HonoursPlayer from './components/HonoursPlayer';
 import FormerTeamPlayer from './components/FormerTeamPlayer';
 import MilestonePlayer from './components/MilestonePlayer';
+import ImagenSubheader from './components/ImagenSubheader';
 
 
 import './App.css'
@@ -27,6 +28,7 @@ function App() {
   return (
     <Router>
       <Header />
+      <ImagenSubheader />
       <Routes>
         <Route path="/" element={<Countries />} />
         {/* Otras rutas */}

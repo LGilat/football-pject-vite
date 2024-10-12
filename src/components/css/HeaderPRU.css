@@ -1,14 +1,17 @@
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #282c34;
+    justify-content: space-around;
+    padding: 5px 10px;
     color: white;
 }
 
-.logo-container {
-    flex: 1;
+.logo-container {   
+    transition: transform 0.3s ease;
+}
+
+.logo-container:hover {
+    transform: scale(1.1);
 }
 
 .logo {
@@ -16,9 +19,7 @@
     height: auto;
 }
 
-.nav-bar {
-    flex: 2;
-}
+
 
 .nav-links {
     display: flex;
@@ -27,18 +28,21 @@
 }
 
 .nav-links a {
-    color: white;
+    color: #3e3e3e;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
+
+    transition: transform 0.3s ease;
+    display: inline-block;
 }
 
 .nav-links a:hover {
     color: #61dafb;
+    transform: scale(1.1);
 }
 
 .search-container {
-    flex: 1;
+
     text-align: right;
 }
 

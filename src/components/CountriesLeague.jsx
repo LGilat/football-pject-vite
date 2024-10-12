@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import useCountries from './customhooks/useCountries'
 import Country from './views/Country'
@@ -15,8 +15,8 @@ const options = {
 
 const URL_COUNTRIES = 'https://www.thesportsdb.com/api/v1/json/3/all_countries.php'
 
-export default function CountriesLeague(){
-    const {countries, loading, error} = useCountries({URL_COUNTRIES})
+export default function CountriesLeague() {
+    const { countries, loading, error } = useCountries({ URL_COUNTRIES })
     const [searchTerm, setSearchTerm] = useState('');
 
     if (loading) {
@@ -34,18 +34,24 @@ export default function CountriesLeague(){
 
     return (
         <>
-            <h1>Countries</h1>
-            <input
-                type="text"
-                placeholder="Search"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                style={{ marginBottom: "20px", padding: "10px", width: "300px" }}
-            /> 
-            <div className='countries-grid'> 
-            {filteredCountries?.map(country => (
-                <Country country={country} key={country.name_en} href={`/allcountryleague/${country.name_en}`} />
-            ))}
+            <div className="label-grid-countries">
+                <h1 className='bebas-neue-regular'>Countries search League</h1>
+                <form className="search-form" onSubmit={(e) => e.preventDefault()}>
+                    <input
+                        type="text"
+                        placeholder="Search"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    <button type="submit">
+                        <i className="fas fa-search" />
+                    </button>
+                </form>
+            </div>
+            <div className='countries-grid'>
+                {filteredCountries?.map(country => (
+                    <Country country={country} key={country.name_en} href={`/allcountryleague/${country.name_en}`} />
+                ))}
 
             </div>
         </>

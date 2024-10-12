@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import Jugador from './views/Jugador'
+import './css/Jugadores.css'
 
 
 
@@ -43,7 +44,7 @@ export default function Jugadores() {
     
 
     return (
-        <div>
+        <div className='players-grid'>
             {jugadores?.map(jugador => (
                 <Jugador key={jugador.idPlayer} jugador={jugador} />
             ))}

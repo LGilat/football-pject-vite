@@ -2,7 +2,6 @@
     margin: 10px;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     width: 600px;
@@ -15,21 +14,37 @@
 }
 
 .leagues-table {
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
+    margin: 0 auto;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.leagues-table th, .leagues-table td {
+
+
+.leagues-table td {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: center;
 }
 
 .leagues-table th {
-    background-color: #f4f4f4;
+    background-color: #dadada;
+    border: 1px solid transparent;
+    padding: 12px;
+    font-size: x-large;
     font-weight: bold;
+    text-shadow: 1px 1px 1px #525252;
 }
+
+.leagues-table tr th:first-child {
+    border-top-left-radius: 10px;
+  }
+  
+  .leagues-table tr th:last-child {
+    border-top-right-radius: 10px;
+  }
 
 .leagues-table tr:hover {
     background-color: #f9f9f9;
@@ -46,10 +61,53 @@
     color: #0056b3;
 }
 
-input[type="text"] {
-    border-radius: 5px;
-    border: 1px solid #ccc;
+.label-grid-leagues {
+    position: relative;
+    top: -60px; /* ajusta el valor según sea necesario */
+    z-index: 1; /* asegúrate de que el */
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    box-sizing: content-box;
+    width: 80%;
 }
+
+.label-grid-leagues h1 {
+    font-size: 3.0rem;
+    text-align: left;
+    margin: 0;
+    padding-left: 1.3em;
+    padding-bottom: 2.2rem;
+    padding-top: 1.2rem;
+}
+
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 400px;
+    margin: 3.0rem;
+}
+
+.search-form button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 50px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #3e8e41;
+}
+
 
 input[type="text"]:focus {
     border-color: #007bff;

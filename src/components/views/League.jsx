@@ -15,10 +15,10 @@ export default function League({ league }) {
             <p><strong>League:</strong> {league.strLeague || 'No league available'}</p>
             <p><strong>Formed:</strong> {league.intFormedYear || 'No Formed available'}</p>
             <p><strong>Season:</strong> {league.strCurrentSeason || 'No Season available'}</p>
-            <p><strong>Facebook:</strong> {league.strFacebook || 'No Facebook available'}</p>
-            <p><strong>Instagram:</strong> {league.strInstagram || 'No Instagram available'}</p>
-            <p><strong>Twitter:</strong> {league.strTwitter || 'No Twitter available'}</p>
-            <p><strong>Youtube:</strong> {league.strYoutube || 'No Youtube available'}</p>
+            <p><strong>Facebook:</strong> {league.strFacebook && <a href={`https://${league.strFacebook}`} target="_blank"> Ir a la página  </a> || 'No Facebook available'} </p>
+            <p><strong>Instagram:</strong> {league.strInstagram && <a href={`https://${league.strInstagram}`}  target="_blank">  Ir a la página </a> || 'No Instagram available'}</p>
+            <p><strong>Twitter:</strong> {league.strTwitter && <a href={`https://${league.strTwitter}`}  target="_blank"> Ir a la página</a> || 'No Twitter available'}  </p>
+            <p><strong>Youtube:</strong> {league.strYoutube && <a href={`https://${league.strYoutube}` } target='_blank'> Ir al canal</a> || 'No Youtube available'} </p>
             <p><strong>RSS:</strong> {league.strRSS || 'No RSS available'}</p>
             {/* <p><strong>Description:</strong> {league.strDescriptionEN || 'No Description available'}</p> */}
         </div>

@@ -17,16 +17,15 @@ export default function Header() {
     return (
         <header className="header">
             <div className="logo-container">
-                <img src="https://via.placeholder.com/150" alt="Logo" className="logo" />
+                <img src="../../public/vite.svg" alt="Logo" className="logo" />
             </div>
             <nav className="nav-bar">
                 <ul className="nav-links">
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/leagues">Leagues</Link></li>
-                    <li><Link to="/leagues-team">Leagues Team</Link></li>
-                    <li><Link to="/countriesleague">Leagues in a Country</Link></li>
-                    <li><Link to="/players">Players</Link></li>
-                    <li><Link to="/aboutus">About Us</Link></li>
+                    <li><Link className='bebas-neue-regular' to="/">Home</Link></li>
+                    <li><Link className='bebas-neue-regular' to="/leagues">Leagues</Link></li>
+                    <li><Link className='bebas-neue-regular' to="/countriesleague">Leagues in a Country</Link></li>
+                    <li><Link className='bebas-neue-regular' to="/players">Players</Link></li>
+                    <li><Link className='bebas-neue-regular' to="/aboutus">About Us</Link></li>
                 </ul>
             </nav>
             <div className="search-container">

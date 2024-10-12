@@ -41,24 +41,44 @@ export default function PlayerDetails() {
         return <div>Error: {error.message}</div>
     }
 
-
     return (
         <div>
-            <h2>Player Details de {player.strPlayer} </h2>
+            <h2 className='bebas-neue-regular'>Player Details de {player.strPlayer} </h2>
             <div className="player-details">
+
                 <div className="player-details-image">
                     {player.strThumb && <img src={player.strThumb} alt={player.strPlayer} />}
                     {!player.strThumb && <img src={player.strCutout || player.strFanart1 || 'https://via.placeholder.com/300'} alt={player.strPlayer} />}
-
-                </div>
-                <div className="player-details-info">
-                    <div className="">
+                    <div className="player-name-position">
                         <h2>{player.strPlayer}</h2>
                         <p>{player.strPosition}</p>
                     </div>
+
+
+                    <div className='player-socialmedia'>
+                        <p>
+                            <TwitterIcon color="#4caf50"/>
+                            <a href={`https://${player.strTwitter}`} title={player.strPlayer}>Twitter</a>  </p>
+                        <p>
+                            <FacebookIcon color="#4caf50"/>
+                            <a href={`https://${player.strFacebook}`} title={player.strPlayer}> Facebook</a>
+                        </p>
+                        <p>
+                            <InstagramIcon color="#4caf50"/>
+                            <a href={`https://${player.strInstagram}`} title={player.strPlayer}> Instagram </a>
+
+                        </p>
+                        <p>
+                            <YoutubeIcon color="#4caf50" />
+                            <a href={`https://${player.strYoutube}`} title={player.strPlayer} > Youtube </a>
+                        </p>
+                    </div>
+
+                </div>
+                <div className="player-details-info">
                     <div className="player-pais-localidad">
-                        <p>{player.strNationality}</p>
-                        <p>{player.strBirthLocation}</p>
+                        <p className='nacionality'>{player.strNationality}</p>
+                        <p className='birthlocalition'>{player.strBirthLocation}</p>
                     </div>
                     <div className='player-genero'>
                         <p>{player.strGender}</p>
@@ -67,7 +87,7 @@ export default function PlayerDetails() {
                     </div>
 
 
-                    <p >Estado: {player.strStatus || 'Estado no disponible'}</p>
+                    <p className='estado' > {player.strStatus || 'Estado no disponible'}</p>
 
                     <div className='player-details-links'>
                         <Link to={`/player/${player.idPlayer}/honours`}>
@@ -81,29 +101,11 @@ export default function PlayerDetails() {
                         </Link>
 
                     </div>
+                    <p className='player-details-info-description'>{player.strDescriptionES || player.strDescriptionEN}</p>
 
                 </div>
 
-                <p className='player-details-info-description'>{player.strDescriptionES || player.strDescriptionEN}</p>
 
-                <div className='player-socialmedia'>
-                    <p>
-                        <TwitterIcon />
-                        <a href={`https://${player.strTwitter}`} title={player.strPlayer}>Twitter</a>  </p>
-                    <p>
-                        <FacebookIcon />
-                        <a href={`https://${player.strFacebook}`} title={player.strPlayer}> Facebook</a>
-                    </p>
-                    <p>
-                        <InstagramIcon />
-                        <a href={`https://${player.strInstagram}`} title={player.strPlayer}> Instagram </a>
-
-                    </p>
-                    <p>
-                        <YoutubeIcon />
-                        <a href={`https://${player.strYoutube}`} title={player.strPlayer} > Youtube </a>
-                    </p>
-                </div>
             </div>
         </div>
 

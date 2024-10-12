@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import Jugador from './views/Jugador';
 
@@ -12,13 +12,13 @@ const options = {
 };
 
 
-export default function Jugadores( ){
+export default function Jugadores() {
     const [jugadores, setJugadores] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [searchTerm, setSearchTerm] = useState("Ronaldo");
     const [sport, setSport] = useState("");
-    
+
     const URL_JUGADORES = 'https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p=' + searchTerm
     useEffect(() => {
         fetch(URL_JUGADORES, options)
@@ -43,50 +43,54 @@ export default function Jugadores( ){
 
 
     // Filtrar los jugadores según el término de búsqueda
-    const filteredJugadores = jugadores?.filter(jugador => 
+    const filteredJugadores = jugadores?.filter(jugador =>
         jugador.strPlayer.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     // Filtrar los jugadores según el deporte seleccionado
     const filteredBysport = filteredJugadores?.filter(jugador =>
         jugador.strSport.toLowerCase() === sport.toLowerCase()
-    ); 
+    );
 
     const selectPlayers = sport ? filteredBysport : filteredJugadores;
 
 
     return (
         <div>
-            <h1>Jugadores</h1>
-            <input
-                type="text"
-                placeholder="Search"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                style={{ marginBottom: "20px", padding: "10px", width: "300px" }}
-            />
+            <div className='label-grid-players'>
+                <h1 className='bebas-neue-regular'>Players Soccer</h1>
+                <form className="search-form" onSubmit={(e) => e.preventDefault()} >
+                    <input
+                        type="text"
+                        placeholder="Search"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        style={{ padding: "10px", width: "300px" }}
+                    />
 
-            <select 
-                value={sport} 
-                onChange={(e) => setSport(e.target.value)}
-                style={{ marginBottom: "20px", marginLeft: "10px", padding: "8px", width: "150px" }}
-            >
-                <option value="">Select a sport</option>
-                <option value="Soccer">Soccer</option>
-                <option value="Basketball">Basketball</option>
-                <option value="Tennis">Tennis</option>
-                <option value="Golf">Golf</option>
-                <option value="Baseball">Baseball</option>
-                <option value="Football">Football</option>
-                <option value="Volleyball">Volleyball</option>
-            </select>
-        
+                    <select
+                        value={sport}
+                        onChange={(e) => setSport(e.target.value)}
+                        style={{  marginLeft: "10px", padding: "8px", width: "150px" }}
+                    >
+                        <option value="">Select a sport</option>
+                        <option value="Soccer">Soccer</option>
+                        <option value="Basketball">Basketball</option>
+                        <option value="Tennis">Tennis</option>
+                        <option value="Golf">Golf</option>
+                        <option value="Baseball">Baseball</option>
+                        <option value="Football">Football</option>
+                        <option value="Volleyball">Volleyball</option>
+                    </select>
+
+                </form>
+            </div>
 
 
 
             <div className="players-grid">
                 {selectPlayers?.map(jugador => (
-                    <Link to={`/players/${jugador.idPlayer}` } key={jugador.idPlayer } >
+                    <Link to={`/players/${jugador.idPlayer}`} key={jugador.idPlayer} >
                         <Jugador key={jugador.idPlayer} jugador={jugador} />
                     </Link>
                 ))}

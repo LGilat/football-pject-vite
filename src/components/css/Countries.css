@@ -1,38 +1,108 @@
 .countries-grid {
+    background-color: #ffffff;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-content: center;
-    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0.6rem;
     grid-row: auto;
     gap: 1rem;
     justify-items: center;
+    border: 2px solid #e2e2e2b7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 60vh;
 }
 
 .country-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 100%;
+    max-height: 94px; /* establece un límite máximo de altura en 94px */ 
     border: 1px solid #ccc;
-    padding: 1rem;
-    text-align: center;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 50%;
+    text-align: left;
     transition: transform 0.3s ease;
 }
 
-.country-card img {
-    max-width: 100%;
-    height: auto;
+.country-card a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
 }
 
+.country-card p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.4rem;
+}
 
+.country-card img {
+    margin: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    
+}
 
 .country-card:hover {
     color: #000000;
     transform: scale(1.1);
 }
 
+
+.label-grid-countries {
+    position: relative;
+    top: -60px; /* ajusta el valor según sea necesario */
+    z-index: 1; /* asegúrate de que el */
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    box-sizing: content-box;
+    width: 80%;
+}
+
+.label-grid-countries h1 {
+    font-size: 3.0rem;
+    text-align: left;
+    margin: 0;
+    padding-left: 1.3em;
+    padding-bottom: 2.2rem;
+    padding-top: 1.2rem;
+}
+
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 400px;
+    margin: 3.0rem;
+}
+
+.search-form button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 50px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #3e8e41;
+}
+
+
 @media (max-width: 1424px) {
-    .country-card h3{
+    .country-card h3 {
         font-size: 0.8rem;
     }
 }
@@ -41,7 +111,8 @@
     .countries-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    .country-card h3{
+
+    .country-card h3 {
         font-size: 1.0rem;
     }
 }
