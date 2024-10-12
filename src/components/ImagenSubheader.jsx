@@ -5,7 +5,7 @@ const ImagenSubheader = () => {
     return (
         <div
             style={{
-                backgroundImage: 'url(../public/survey_background00.jpg)',
+                backgroundImage: 'url(/survey_background00.jpg)',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',

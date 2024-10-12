@@ -17,7 +17,7 @@ export default function Header() {
     return (
         <header className="header">
             <div className="logo-container">
-                <img src="../../public/vite.svg" alt="Logo" className="logo" />
+                <img src="/vite.svg" alt="Logo" className="logo" />
             </div>
             <nav className="nav-bar">
                 <ul className="nav-links">
